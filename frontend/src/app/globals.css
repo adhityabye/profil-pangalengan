@@ -1,0 +1,97 @@
+@import "@radix-ui/themes/styles.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: var(--color-white-100);
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-black-900);
+  font-family: var(--font-inter);
+}
+
+h2 {
+  font-family: var(--font-josefin);
+}
+
+input[type="password"]::-webkit-inner-spin-button,
+input[type="password"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="password"] {
+  appearance: textfield;
+}
+
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-ms-reveal {
+  display: none;
+}
+
+input[type="password"]::-o-clear,
+input[type="password"]::-o-reveal {
+  display: none;
+}
+
+div[type="circle"] {
+  aspect-ratio: 1/1;
+}
+
+div[type="card"] {
+  aspect-ratio: 1/1.3;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-75%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.loader-circle1 {
+  background-color: rgb(216 180 254);
+  animation: bounce 1s infinite;
+}
+
+.loader-circle2 {
+  background-color: rgb(168 85 247);
+  animation: bounce 1.25s infinite;
+}
+
+.loader-circle3 {
+  background-color: rgb(107 33 168);
+  animation: bounce 1.5s infinite;
+}
+
+.loader-circle4 {
+  background-color: rgb(59 7 100);
+  animation: bounce 1.75s infinite;
+}
