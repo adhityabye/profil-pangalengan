@@ -1,127 +1,66 @@
 "use client";
 
 import React, { useState } from "react";
-import { Bar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import { Pie } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-// Data extracted from the provided screenshot
-const genderData = {
-  labels: [
-    "Pak Anwar Rojab",
-    "Pak Ade Heri",
-    "Pak Dadang Jahana",
-    "Yayan Rihana",
-    "Wahyat",
-    "Deni Hidayat",
-    "Ade Tansa",
-    "Cucun non anggota",
-    "Asep Samsu",
-    "Cucun anggota",
-    "Nandang Suhendra",
-    "Ujang Rahyana",
-    "Asep Sumaryana",
-    "Jajang Carli",
-  ],
-  datasets: [
-    {
-      label: "Jantan",
-      data: [1, 1, 0, 0, 7, 0, 4, 2, 1, 0, 3, 2, 0, 2],
-      backgroundColor: "rgba(54, 162, 235, 0.2)",
-      borderColor: "rgba(54, 162, 235, 1)",
-      borderWidth: 1,
-    },
-    {
-      label: "Betina",
-      data: [12, 7, 7, 4, 8, 5, 0, 0, 0, 3, 5, 0, 7, 0],
-      backgroundColor: "rgba(153, 102, 255, 0.2)",
-      borderColor: "rgba(153, 102, 255, 1)",
-      borderWidth: 1,
-    },
-  ],
-};
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const typeData = {
-  labels: [
-    "Pak Anwar Rojab",
-    "Pak Ade Heri",
-    "Pak Dadang Jahana",
-    "Yayan Rihana",
-    "Wahyat",
-    "Deni Hidayat",
-    "Ade Tansa",
-    "Cucun non anggota",
-    "Asep Samsu",
-    "Cucun anggota",
-    "Nandang Suhendra",
-    "Ujang Rahyana",
-    "Asep Sumaryana",
-    "Jajang Carli",
-  ],
+  labels: ["Perah", "Daging"],
   datasets: [
     {
-      label: "Perah",
-      data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-      backgroundColor: "rgba(255, 206, 86, 0.2)",
-      borderColor: "rgba(255, 206, 86, 1)",
-      borderWidth: 1,
-    },
-    {
-      label: "Daging",
-      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      backgroundColor: "rgba(75, 192, 192, 0.2)",
-      borderColor: "rgba(75, 192, 192, 1)",
+      data: [88, 0],
+      backgroundColor: ["rgba(255, 206, 86, 0.2)", "rgba(75, 192, 192, 0.2)"],
+      borderColor: ["rgba(255, 206, 86, 1)", "rgba(75, 192, 192, 1)"],
       borderWidth: 1,
     },
   ],
 };
 
 const healthConditionData = {
-  labels: [
-    "Pak Anwar Rojab",
-    "Pak Ade Heri",
-    "Pak Dadang Jahana",
-    "Yayan Rihana",
-    "Wahyat",
-    "Deni Hidayat",
-    "Ade Tansa",
-    "Cucun non anggota",
-    "Asep Samsu",
-    "Cucun anggota",
-    "Nandang Suhendra",
-    "Ujang Rahyana",
-    "Asep Sumaryana",
-    "Jajang Carli",
-  ],
+  labels: ["Sehat", "Sakit"],
   datasets: [
     {
-      label: "Sehat",
-      data: [13, 8, 7, 4, 15, 5, 4, 2, 1, 3, 8, 2, 7, 5],
-      backgroundColor: "rgba(75, 192, 192, 0.2)",
-      borderColor: "rgba(75, 192, 192, 1)",
+      data: [14, 0],
+      backgroundColor: ["rgba(75, 192, 192, 0.2)", "rgba(255, 99, 132, 0.2)"],
+      borderColor: ["rgba(75, 192, 192, 1)", "rgba(255, 99, 132, 1)"],
       borderWidth: 1,
     },
+  ],
+};
+
+const vaccineData = {
+  labels: ["Vaksin", "Tidak Vaksin"],
+  datasets: [
     {
-      label: "Sakit",
-      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      backgroundColor: "rgba(255, 99, 132, 0.2)",
-      borderColor: "rgba(255, 99, 132, 1)",
+      data: [81, 7],
+      backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)"],
+      borderColor: ["rgba(54, 162, 235, 1)", "rgba(255, 99, 132, 1)"],
+      borderWidth: 1,
+    },
+  ],
+};
+
+const genderData = {
+  labels: ["Jantan", "Betina"],
+  datasets: [
+    {
+      data: [22, 66],
+      backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(153, 102, 255, 0.2)"],
+      borderColor: ["rgba(54, 162, 235, 1)", "rgba(153, 102, 255, 1)"],
+      borderWidth: 1,
+    },
+  ],
+};
+
+const ownerData = {
+  labels: ["KPBS", "Mandiri"],
+  datasets: [
+    {
+      data: [79, 9],
+      backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(153, 102, 255, 0.2)"],
+      borderColor: ["rgba(54, 162, 235, 1)", "rgba(153, 102, 255, 1)"],
       borderWidth: 1,
     },
   ],
@@ -129,29 +68,42 @@ const healthConditionData = {
 
 const options = {
   maintainAspectRatio: false,
-  scales: {
-    y: {
-      beginAtZero: true,
-      ticks: {
-        stepSize: 1,
-      },
-    },
-  },
 };
 
 export default function Wilayah() {
-  const [chartType, setChartType] = useState("gender");
+  const [chartType, setChartType] = useState("type");
 
   const getChartData = () => {
     switch (chartType) {
-      case "gender":
-        return genderData;
       case "type":
         return typeData;
       case "healthCondition":
         return healthConditionData;
-      default:
+      case "vaccineStatus":
+        return vaccineData;
+      case "gender":
         return genderData;
+      case "owner":
+        return ownerData;
+      default:
+        return typeData;
+    }
+  };
+
+  const getChartText = () => {
+    switch (chartType) {
+      case "type":
+        return "Diagram ini menunjukkan jenis sapi yang dimiliki, baik untuk perah maupun untuk daging. Jumlah sapi perah adalah 88, sementara jumlah sapi daging adalah 0.";
+      case "healthCondition":
+        return "Diagram ini menunjukkan kondisi kesehatan sapi, yang mencakup sapi sehat dan sapi sakit. Jumlah sapi sehat adalah 14, sementara jumlah sapi sakit adalah 0.";
+      case "vaccineStatus":
+        return "Diagram ini menunjukkan status vaksinasi sapi, yang mencakup sapi yang sudah divaksin dan yang belum divaksin. Jumlah sapi yang sudah divaksin adalah 81, sementara yang belum divaksin adalah 7.";
+      case "gender":
+        return "Diagram ini menunjukkan jenis kelamin sapi, yang mencakup jumlah sapi jantan dan betina. Jumlah sapi jantan adalah 22, sementara jumlah sapi betina adalah 66.";
+      case "owner":
+        return "Diagram ini menunjukkan kepemilikan sapi, yang mencakup sapi milik KPBS dan milik mandiri. Jumlah sapi milik KPBS adalah 79, sementara milik mandiri adalah 9.";
+      default:
+        return "";
     }
   };
 
@@ -162,17 +114,7 @@ export default function Wilayah() {
           Sapi
         </h3>
 
-        <div className="flex justify-center mb-4 space-x-4">
-          <button
-            onClick={() => setChartType("gender")}
-            className={`px-4 py-2 rounded-md ${
-              chartType === "gender"
-                ? "bg-blue-700 text-white"
-                : "bg-button-primary-hover text-white"
-            }`}
-          >
-            Jenis Kelamin
-          </button>
+        <div className="flex justify-center mb-12 space-x-4">
           <button
             onClick={() => setChartType("type")}
             className={`px-4 py-2 rounded-md ${
@@ -181,7 +123,7 @@ export default function Wilayah() {
                 : "bg-button-primary-hover text-white"
             }`}
           >
-            Jenis
+            Jenis Sapi
           </button>
           <button
             onClick={() => setChartType("healthCondition")}
@@ -193,10 +135,45 @@ export default function Wilayah() {
           >
             Kondisi Kesehatan
           </button>
+          <button
+            onClick={() => setChartType("vaccineStatus")}
+            className={`px-4 py-2 rounded-md ${
+              chartType === "vaccineStatus"
+                ? "bg-blue-700 text-white"
+                : "bg-button-primary-hover text-white"
+            }`}
+          >
+            Status Vaksin
+          </button>
+          <button
+            onClick={() => setChartType("gender")}
+            className={`px-4 py-2 rounded-md ${
+              chartType === "gender"
+                ? "bg-blue-700 text-white"
+                : "bg-button-primary-hover text-white"
+            }`}
+          >
+            Jenis Kelamin
+          </button>
+          <button
+            onClick={() => setChartType("owner")}
+            className={`px-4 py-2 rounded-md ${
+              chartType === "owner"
+                ? "bg-blue-700 text-white"
+                : "bg-button-primary-hover text-white"
+            }`}
+          >
+            Kepemilikan
+          </button>
         </div>
 
-        <div className="w-full h-[500px] mx-auto">
-          <Bar data={getChartData()} options={options} />
+        <div className="w-full h-[500px] mx-auto flex">
+          <div className="w-1/2">
+            <Pie data={getChartData()} options={options} />
+          </div>
+          <div className="w-1/2 flex items-center justify-start pl-10">
+            <p className="text-left text-lg">{getChartText()}</p>
+          </div>
         </div>
       </div>
     </section>
