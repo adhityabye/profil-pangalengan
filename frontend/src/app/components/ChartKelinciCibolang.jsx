@@ -148,7 +148,7 @@ export default function Wilayah() {
             <Pie data={getChartData()} options={options} />
           </div>
           <div className="w-1/2 flex items-center justify-start pl-10">
-            <p className="text-left text-lg">{getChartText()}</p>
+            <p className="text-left text-lg font-josefin">{getChartText()}</p>
           </div>
         </div>
       </div>
