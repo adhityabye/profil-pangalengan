@@ -1,26 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link"; // Import Link component
-import illust2 from "../../../public/assets/hero.png";
+import Link from "next/link";
+import illust1 from "../../../public/assets/cibolang.jpeg";
+import illust2 from "../../../public/assets/babakan-fix.jpeg";
+import illust3 from "../../../public/assets/malabar.png";
 
 export default function Wilayah() {
   return (
-    <section className="bg-main flex h-auto min-h-full flex-col items-center mx-auto py-20">
-      <div className="w-full px-20">
-        <h3 className="bg-secondary rounded-md items-start text-[24px] p-2 text-white-100 font-semibold font-josefin text-left mb-8 inline-block">
+    <section
+      id="wilayah"
+      className="bg-main flex h-auto min-h-full flex-col items-center mx-auto py-10 sm:py-20"
+    >
+      <div className="w-full px-4 sm:px-10 md:px-20">
+        <h3 className="bg-secondary rounded-md items-start text-lg sm:text-xl md:text-2xl p-2 text-white-100 font-semibold font-josefin text-left mb-4 sm:mb-8 inline-block">
           Wilayah Administratif Desa Banjarsari
         </h3>
 
         {/* Container for Cards */}
-        <div className="mx-20 flex flex-row gap-4 justify-between">
+        <div className="flex flex-wrap lg:flex-nowrap overflow-x-auto gap-4 lg:gap-0 justify-between lg:space-x-6 px-4">
           {/* Cibolang */}
           <Link href="/cibolang" passHref>
-            <div className="flex flex-col cursor-pointer">
+            <div className="flex flex-col cursor-pointer flex-shrink-0">
               <div className="flex flex-col w-60 border-2 bg-white outline-2 outline-black rounded-xl items-center justify-center m-3 transition-transform transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg">
                 <div className="h-36 w-full rounded-xl overflow-hidden">
                   <Image
-                    src={illust2}
+                    src={illust1}
                     alt=""
                     className="h-full w-full object-cover"
                   />
@@ -34,7 +39,7 @@ export default function Wilayah() {
 
           {/* Babakan */}
           <Link href="/babakan" passHref>
-            <div className="flex flex-col cursor-pointer">
+            <div className="flex flex-col cursor-pointer flex-shrink-0">
               <div className="flex flex-col w-60 border-2 bg-white outline-2 outline-black rounded-xl items-center justify-center m-3 transition-transform transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg">
                 <div className="h-36 w-full rounded-xl overflow-hidden">
                   <Image
@@ -51,12 +56,12 @@ export default function Wilayah() {
           </Link>
 
           {/* Malabar */}
-          <Link href="/malabar" passHref>
-            <div className="flex flex-col cursor-pointer">
+          <Link href="../NotFound" passHref>
+            <div className="flex flex-col cursor-pointer flex-shrink-0">
               <div className="flex flex-col w-60 border-2 bg-white outline-2 outline-black rounded-xl items-center justify-center m-3 transition-transform transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg">
                 <div className="h-36 w-full rounded-xl overflow-hidden">
                   <Image
-                    src={illust2}
+                    src={illust3}
                     alt=""
                     className="h-full w-full object-cover"
                   />

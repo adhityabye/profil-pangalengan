@@ -2,22 +2,26 @@
 
 export default function Vision() {
   return (
-    <section className="bg-main flex h-auto min-h-full flex-col items-center mx-auto py-20">
-      <div className="w-full px-20">
-        <h3 className="bg-secondary rounded-md items-start text-[24px] p-2 text-white-100 font-semibold font-josefin text-left mb-8 inline-block">
+    <section className="bg-main flex h-auto min-h-full flex-col items-center mx-auto py-10 sm:py-20">
+      <div className="w-full px-4 sm:px-10 md:px-20">
+        <h3 className="bg-secondary rounded-md items-start text-lg sm:text-xl md:text-2xl p-2 text-white-100 font-semibold font-josefin text-left mb-4 sm:mb-8 inline-block">
           Visi Misi Desa Banjarsari
         </h3>
-        <div className="mb-8">
-          <h4 className="text-xl font-josefin text-darkgray mb-2">Visi</h4>
-          <p className="text-lg text-darkgray font-josefin leading-relaxed">
+        <div className="mb-4 sm:mb-8">
+          <h4 className="text-base sm:text-lg md:text-xl font-josefin text-darkgray mb-2">
+            Visi
+          </h4>
+          <p className="text-sm sm:text-base md:text-lg text-darkgray font-josefin leading-relaxed">
             Mewujudkan Masyarakat Desa Banjarsari yang Damai, Berbudaya,
             Sejahtera dan Berdaya Saing dengan berlandaskan Religius, kultural
             dan Budaya Daerah
           </p>
         </div>
         <div>
-          <h4 className="text-xl font-josefin text-darkgray mb-2">Misi</h4>
-          <ol className="list-decimal pl-5 text-lg font-josefin text-darkgray leading-relaxed space-y-2">
+          <h4 className="text-base sm:text-lg md:text-xl font-josefin text-darkgray mb-2">
+            Misi
+          </h4>
+          <ol className="list-decimal pl-5 text-sm sm:text-base md:text-lg font-josefin text-darkgray leading-relaxed space-y-2">
             <li>
               Meningkatkan kwalitas sumber daya manusia yang berbasis iman dan
               taqwa.
