@@ -13,7 +13,7 @@ export default function NotFound() {
         <p className="font-normal text-base sm:text-lg">
           Halaman yang Anda cari untuk saat ini masih dalam tahap pengembanga.
         </p>
-        <Link href="/">
+        <Link href="./">
           <p className="font-josefin px-6 py-1.5 mt-4 bg-secondary text-white-100 text-sm rounded-2xl inline-block text-center">
             Beranda
           </p>

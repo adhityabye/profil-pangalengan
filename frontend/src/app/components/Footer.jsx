@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="bg-secondary p-6 sm:p-10 text-primary-content flex flex-col items-center">
       <aside className="text-center w-full max-w-screen-lg">
         <div className="flex flex-col items-center">
-          <Link className="flex items-center gap-4 mt-2 mb-4" href="/">
+          <Link className="flex items-center gap-4 mt-2 mb-4" href="./">
             <Image src={Logo} className="h-8 w-min" alt="TeknoVibe Logo" />
             <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white-100">
               Lokarayapangalengan

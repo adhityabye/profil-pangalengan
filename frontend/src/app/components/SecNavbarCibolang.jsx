@@ -19,7 +19,7 @@ export default function SecNavbar() {
   return (
     <nav className="w-full fixed top-0 z-40 bg-main border-gray-200 pb-5 h-14 md:h-16">
       <div className="max-w-screen-2xl h-full flex items-center justify-between mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href="/" legacyBehavior>
+        <Link href="./" legacyBehavior>
           <a className="flex items-center gap-2 md:gap-3">
             <h3 className="bg-secondary font-josefin px-3 mt-4 sm:px-4 md:px-5 py-1.5 text-base text-white-100 font-semibold rounded-md text-center">
               Dusun Cibolang

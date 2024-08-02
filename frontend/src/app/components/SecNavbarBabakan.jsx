@@ -21,7 +21,7 @@ export default function SecNavbar() {
     <nav className="w-full fixed top-0 z-40 bg-main border-gray-200 h-14 md:h-16">
       <div className="max-w-screen-2xl h-full flex items-center justify-between mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <Link
-          href="/"
+          href="./"
           className="flex items-center gap-2 md:gap-3"
           legacyBehavior
         >

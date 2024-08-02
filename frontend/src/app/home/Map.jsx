@@ -1,9 +1,13 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
-import L from "leaflet";
+
+// Ensure Leaflet and Leaflet CSS are imported only on the client side
+const isClient = typeof window !== "undefined";
+if (isClient) {
+  require("leaflet/dist/leaflet.css");
+}
 
 const MapComponent = dynamic(
   () => import("react-leaflet").then((mod) => mod.MapContainer),
@@ -23,6 +27,8 @@ export default function Map() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      const L = require("leaflet");
+
       delete L.Icon.Default.prototype._getIconUrl;
 
       L.Icon.Default.mergeOptions({
@@ -49,15 +55,17 @@ export default function Map() {
       <div className="w-full px-4 sm:px-10 md:px-20">
         <div className="flex flex-col lg:flex-row justify-between w-full">
           <div className="w-full h-96 md:h-[500px]">
-            <MapComponent
-              center={[-7.3354, 108.1048]}
-              zoom={13}
-              scrollWheelZoom={false}
-              style={{ height: "100%", width: "100%" }}
-            >
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              {geoJsonData && <GeoJSON data={geoJsonData} />}
-            </MapComponent>
+            {isClient && (
+              <MapComponent
+                center={[-7.3354, 108.1048]}
+                zoom={13}
+                scrollWheelZoom={false}
+                style={{ height: "100%", width: "100%" }}
+              >
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                {geoJsonData && <GeoJSON data={geoJsonData} />}
+              </MapComponent>
+            )}
           </div>
         </div>
       </div>
