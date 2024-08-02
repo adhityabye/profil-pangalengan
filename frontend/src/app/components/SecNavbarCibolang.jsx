@@ -5,10 +5,15 @@ import Link from "next/link";
 
 export default function SecNavbar() {
   const [clicked, setClicked] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleClick = (index) => {
     setClicked(index);
     setTimeout(() => setClicked(null), 300);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
   };
 
   const menuItems = [
@@ -42,8 +47,8 @@ export default function SecNavbar() {
         </div>
         <div className="sm:hidden flex items-center">
           <button
-            className="text-white-100 focus:outline-none"
-            onClick={() => setClicked((prev) => !prev)}
+            className="text-black focus:outline-none"
+            onClick={toggleMenu}
           >
             <svg
               className="w-6 h-6"
@@ -56,14 +61,14 @@ export default function SecNavbar() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d={clicked ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+                d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
               />
             </svg>
           </button>
         </div>
       </div>
-      {clicked && (
-        <div className="sm:hidden flex flex-col bg-secondary font-josefin px-4 py-2 mt-4 space-y-2">
+      {menuOpen && (
+        <div className="sm:hidden flex flex-col bg-secondary font-josefin px-4 py-2 m-5 space-y-2 rounded-lg">
           {menuItems.map((item, index) => (
             <Link key={index} href={item.href} legacyBehavior>
               <a
