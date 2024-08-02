@@ -8,9 +8,6 @@ export default function Wisata() {
   const cards = [
     { id: 1, title: "Rumah Bosscha", image: illust1 },
     { id: 2, title: "Teh Jangkung Malabar", image: illust2 },
-    // { id: 3, title: "Teh Jangkung", image: illust2 },
-    // { id: 4, title: "Situ Cicoledas", image: illust2 },
-    // { id: 5, title: "Rumaah Bosscha", image: illust2 },
   ];
 
   return (
@@ -22,7 +19,7 @@ export default function Wisata() {
         <h3 className="bg-secondary rounded-md items-start text-lg sm:text-xl md:text-2xl p-2 text-white-100 font-semibold font-josefin text-left mb-4 sm:mb-8 inline-block">
           Rekomendasi Wisata
         </h3>
-        <div className="flex flex-wrap lg:flex-nowrap overflow-x-auto gap-4 lg:gap-0 justify-between lg:space-x-6 px-4">
+        <div className="flex overflow-x-auto gap-4 px-4 scrollbar-hide">
           {/* Container for Cards */}
           {cards.map((card) => (
             <div

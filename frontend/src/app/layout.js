@@ -16,7 +16,7 @@ const josefin = Josefin_Sans({
 });
 
 export const metadata = {
-  title: "Profil Banjarsari",
+  title: "Desa Banjarsari",
   description: "Jelajahi keindahan alam Banjarsari",
 };
 

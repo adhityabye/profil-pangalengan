@@ -18,7 +18,7 @@ export default function Wilayah() {
         </h3>
 
         {/* Container for Cards */}
-        <div className="flex flex-wrap lg:flex-nowrap overflow-x-auto gap-4 lg:gap-0 justify-between lg:space-x-6 px-4">
+        <div className="flex flex-nowrap overflow-x-auto gap-4 px-4 scrollbar-hide">
           {/* Cibolang */}
           <Link href="/cibolang" passHref>
             <div className="flex flex-col cursor-pointer flex-shrink-0">
