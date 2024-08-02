@@ -2,9 +2,8 @@
 
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import L from "leaflet";
-import data from "../data/Batas_Wilayah_Desa_Banjarsari.geojson";
 
 const MapComponent = dynamic(
   () => import("react-leaflet").then((mod) => mod.MapContainer),
@@ -20,6 +19,8 @@ const GeoJSON = dynamic(
 );
 
 export default function Map() {
+  const [geoJsonData, setGeoJsonData] = useState(null);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       delete L.Icon.Default.prototype._getIconUrl;
@@ -30,6 +31,13 @@ export default function Map() {
         iconUrl: require("leaflet/dist/images/marker-icon.png").default,
         shadowUrl: require("leaflet/dist/images/marker-shadow.png").default,
       });
+
+      // Load GeoJSON file dynamically
+      import("../data/Batas_Wilayah_Desa_Banjarsari.geojson")
+        .then((data) => {
+          setGeoJsonData(data.default);
+        })
+        .catch((error) => console.error("Error loading GeoJSON file:", error));
     }
   }, []);
 
@@ -48,7 +56,7 @@ export default function Map() {
               style={{ height: "100%", width: "100%" }}
             >
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              <GeoJSON data={data} />
+              {geoJsonData && <GeoJSON data={geoJsonData} />}
             </MapComponent>
           </div>
         </div>
