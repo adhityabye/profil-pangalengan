@@ -9,16 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@radix-ui/themes": "^3.1.1",
     "axios": "^1.7.2",
+    "chart.js": "^4.4.3",
     "compressorjs": "^1.2.1",
     "fontawesome": "^5.6.3",
     "js-cookie": "^3.0.5",
+    "json-loader": "^0.5.7",
+    "leaflet": "^1.9.4",
     "next": "14.2.4",
+    "next-compose-plugins": "^2.2.1",
     "radix-ui": "^1.0.1",
     "react": "^18.3.1",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
+    "react-fontawesome": "^1.7.1",
     "react-icons": "^5.2.1",
+    "react-leaflet": "^4.2.1",
     "react-toastify": "^10.0.5",
     "tailwind": "^4.0.0"
   },
@@ -26,7 +34,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.4"
   },
   "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
   "main": "tailwind.config.js",
