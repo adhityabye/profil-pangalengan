@@ -146,7 +146,7 @@ const pieOptions = {
   },
 };
 
-export default function dataPendidikan() {
+export default function DataPendidikan() {
   const [chartType, setChartType] = useState("bar");
 
   const getChart = () => {
@@ -191,8 +191,8 @@ export default function dataPendidikan() {
         <div className="w-full h-[500px] mx-auto">{getChart()}</div>
         {chartType === "pie" && (
           <p className="mt-4 text-center">
-            {/* Keterangan: Diagram lingkaran menunjukkan total jumlah berdasarkan
-            tingkatan pendidikan. */}
+            Keterangan: Diagram lingkaran menunjukkan total jumlah berdasarkan
+            tingkatan pendidikan.
           </p>
         )}
       </div>
