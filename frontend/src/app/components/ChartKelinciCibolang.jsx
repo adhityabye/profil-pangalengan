@@ -59,14 +59,14 @@ const options = {
 };
 
 export default function Wilayah() {
-  const [chartType, setChartType] = useState("type");
+  const [chartType, setChartType] = useState("healthCondition");
 
   const getChartData = () => {
     switch (chartType) {
-      case "type":
-        return typeData;
       case "healthCondition":
         return healthConditionData;
+      case "type":
+        return typeData;
       case "vaccineStatus":
         return vaccineData;
       case "gender":
@@ -74,7 +74,7 @@ export default function Wilayah() {
       case "owner":
         return ownerData;
       default:
-        return typeData;
+        return healthConditionData;
     }
   };
 
@@ -95,25 +95,15 @@ export default function Wilayah() {
 
   return (
     <section className="bg-main flex h-auto min-h-full flex-col items-center mx-auto py-20">
-      <div className="w-full px-20">
+      <div className="w-full px-4 md:px-20">
         <h3 className="items-start text-[24px] p-2 text-black-800 font-bold font-josefin text-left mb-8 inline-block">
           Kelinci
         </h3>
 
-        <div className="flex justify-center mb-12 space-x-4">
-          <button
-            onClick={() => setChartType("type")}
-            className={`px-4 py-2 rounded-md ${
-              chartType === "type"
-                ? "bg-blue-700 text-white"
-                : "bg-button-primary-hover text-white"
-            }`}
-          >
-            Jenis Kelinci
-          </button>
+        <div className="flex flex-wrap justify-center mb-12 space-x-2 md:space-x-4">
           <button
             onClick={() => setChartType("healthCondition")}
-            className={`px-4 py-2 rounded-md ${
+            className={`px-4 py-2 m-1  rounded-md ${
               chartType === "healthCondition"
                 ? "bg-blue-700 text-white"
                 : "bg-button-primary-hover text-white"
@@ -122,8 +112,18 @@ export default function Wilayah() {
             Kondisi Kesehatan
           </button>
           <button
+            onClick={() => setChartType("type")}
+            className={`px-4 py-2 m-1 rounded-md ${
+              chartType === "type"
+                ? "bg-blue-700 text-white"
+                : "bg-button-primary-hover text-white"
+            }`}
+          >
+            Jenis Kelinci
+          </button>
+          <button
             onClick={() => setChartType("gender")}
-            className={`px-4 py-2 rounded-md ${
+            className={`px-4 py-2 m-1  rounded-md ${
               chartType === "gender"
                 ? "bg-blue-700 text-white"
                 : "bg-button-primary-hover text-white"
@@ -133,7 +133,7 @@ export default function Wilayah() {
           </button>
           <button
             onClick={() => setChartType("owner")}
-            className={`px-4 py-2 rounded-md ${
+            className={`px-4 py-2 m-1  rounded-md ${
               chartType === "owner"
                 ? "bg-blue-700 text-white"
                 : "bg-button-primary-hover text-white"
@@ -143,11 +143,11 @@ export default function Wilayah() {
           </button>
         </div>
 
-        <div className="w-full h-[500px] mx-auto flex">
-          <div className="w-1/2">
+        <div className="w-full flex flex-col md:flex-row items-center md:justify-center">
+          <div className="w-full md:w-1/2 h-64 md:h-[500px]">
             <Pie data={getChartData()} options={options} />
           </div>
-          <div className="w-1/2 flex items-center justify-start pl-10">
+          <div className="w-full md:w-1/2 flex items-center justify-center md:justify-start px-4 md:pl-10 mt-6 md:mt-0">
             <p className="text-left text-lg font-josefin">{getChartText()}</p>
           </div>
         </div>
