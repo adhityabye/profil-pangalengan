@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CircleBackground from "./components/circleBackground";
+import CircleBackground from "./components/CircleBackground";
 
 export default function NotFound() {
   return (
@@ -16,7 +16,7 @@ export default function NotFound() {
             Beranda
           </p>
         </Link>
-        {/* <CircleBackground /> */}
+        <CircleBackground />
       </div>
     </div>
   );
