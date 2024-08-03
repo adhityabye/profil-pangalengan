@@ -57,7 +57,7 @@ export default function Map() {
           <div className="w-full h-96 md:h-[500px]">
             {isClient && (
               <MapComponent
-                center={[-7.3354, 108.1048]}
+                center={[-7.236, 107.615]}
                 zoom={13}
                 scrollWheelZoom={false}
                 style={{ height: "100%", width: "100%" }}
