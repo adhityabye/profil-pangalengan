@@ -6,10 +6,15 @@ import Image from "next/image";
 
 export default function Navbar() {
   const [clicked, setClicked] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleClick = (index) => {
     setClicked(index);
     setTimeout(() => setClicked(null), 300);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
   };
 
   const menuItems = [
@@ -45,14 +50,27 @@ export default function Navbar() {
         </div>
         <div className="sm:hidden">
           <button
-            className="text-white-100 bg-secondary"
-            onClick={() => setClicked(!clicked)}
+            className="text-black focus:outline-none"
+            onClick={toggleMenu}
           >
-            ☰
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+              />
+            </svg>
           </button>
         </div>
       </div>
-      {clicked && (
+      {menuOpen && (
         <div className="sm:hidden flex flex-col bg-secondary font-josefin px-4 py-2 mt-4 text-base rounded-md text-center space-y-2">
           {menuItems.map((item, index) => (
             <Link key={index} href={item.href} legacyBehavior>

@@ -39,7 +39,7 @@ const religionData = {
       borderWidth: 1,
       hoverBackgroundColor: "rgba(54, 162, 235, 0.7)",
       hoverBorderColor: "rgba(54, 162, 235, 1)",
-      data: [2976, 0, 0, 0, 0, 0, 0, 0],
+      data: [4116, 0, 0, 0, 0, 0, 0, 0],
     },
     {
       label: "Perempuan",
@@ -48,7 +48,7 @@ const religionData = {
       borderWidth: 1,
       hoverBackgroundColor: "rgba(255, 99, 132, 0.7)",
       hoverBorderColor: "rgba(255, 99, 132, 1)",
-      data: [2871, 0, 0, 0, 0, 0, 0, 0],
+      data: [3981, 0, 0, 0, 0, 0, 0, 0],
     },
   ],
 };

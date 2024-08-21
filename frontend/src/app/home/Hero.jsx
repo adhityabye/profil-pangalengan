@@ -31,8 +31,7 @@ export default function Hero() {
             JELAJAHI KEINDAHAN ALAM <br /> DESA BANJARSARI
           </p>
           <p className="text-white font-inter text-sm sm:text-base font-semibold mt-4 drop-shadow-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor
+            Temukan kedamaian dan keindahan alam di Desa Banjarsari
           </p>
           {/* <div className="mt-4">
             <Button title="Explore Now" href="#explore" />

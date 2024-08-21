@@ -45,10 +45,10 @@ export default function Cibolang() {
               <p className="text-white font-bold text-4xl sm:text-5xl md:text-6xl font-poppins leading-tight mt-8 drop-shadow-lg">
                 Dusun Cibolang
               </p>
-              <p className="text-white font-inter text-sm sm:text-base md:text-lg font-semibold mt-4 drop-shadow-lg">
+              {/* <p className="text-white font-inter text-sm sm:text-base md:text-lg font-semibold mt-4 drop-shadow-lg">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor
-              </p>
+              </p> */}
             </div>
           </div>
         </section>
